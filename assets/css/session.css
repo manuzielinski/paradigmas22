@@ -1,0 +1,31 @@
+.welcome-message {
+    color: #d6d5d5;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #333333;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-message:hover {
+    background-color: #444444;
+}
+
+.logout-button {
+    color: #d6d5d5;
+    background-color: #b23b3b;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background-color: #e05a5a;
+}
+

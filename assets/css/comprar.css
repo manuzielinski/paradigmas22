@@ -1,0 +1,108 @@
+/* Contenedor principal del formulario */
+.Forms-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo general del formulario */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Agrupación de los elementos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Etiquetas dentro del formulario */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Campos de entrada (texto, select) */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0a76eb;
+    outline: none;
+    box-shadow: 0 0 8px rgba(10, 118, 235, 0.3);
+}
+
+/* Eliminar botones de spin en campos numéricos (teléfono) */
+.form-group input[type="tel"]::-webkit-inner-spin-button,
+.form-group input[type="tel"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Botón de envío */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #0a76eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+/* Estilos adicionales para los campos del formulario en dispositivos pequeños */
+@media (max-width: 768px) {
+    .Forms-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
