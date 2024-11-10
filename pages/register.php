@@ -11,8 +11,9 @@
     <title>Registro</title>
 </head>
 <body>
-
-    <?php include '../includes/loginToggle.php'; ?>
+    
+    <?php include '../php/conexion.php';
+    include '../includes/loginToggle.php'; ?>
     
     <div class="container-login">
         <div class="box form-box">

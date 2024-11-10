@@ -1,12 +1,5 @@
 <?php
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=smokesociety", "root", "");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    exit();
-}
-
+include '../php/conexion.php';
 // obtener los productos activos
 $stmt = $pdo->prepare("SELECT * FROM productos WHERE activo = 1");
 $stmt->execute();

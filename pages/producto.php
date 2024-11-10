@@ -1,14 +1,7 @@
 <?php
+include '../php/conexion.php';
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "Producto no encontrado.";
-    exit();
-}
-
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=smokesociety", "root", "");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
     exit();
 }
 

@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=smokesociety", "root", "");
+include '../php/conexion.php';
 
 // insertar nuevo producto
 if (isset($_POST['submit']) && isset($_FILES['foto']['tmp_name'])) {
