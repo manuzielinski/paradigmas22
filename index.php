@@ -60,7 +60,9 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($productos as $producto): ?>
                 <div class="card" data-price="<?= $producto['precio'] ?>">
                     <div class="product-image">
-                        <img src="assets/images/<?= strtolower(str_replace(' ', '', $producto['nombre'])) ?>.jpeg" alt="<?= $producto['nombre'] ?>">
+                            <?php if ($producto['foto_blob']): ?>
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['foto_blob']); ?>" alt="Imagen del producto" class="product-thumbnail">
+                            <?php endif; ?>
                     </div>
                     <div class="product-info">
                         <h3><?= $producto['nombre'] ?> - <?= $producto['sabor'] ?></h3>
@@ -73,6 +75,8 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
 
+
+        
         <div class="about-section">
             <img src="assets/images/about.webp" alt="Sobre Nosotros">
             <div class="about-content">
