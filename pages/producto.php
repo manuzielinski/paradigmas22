@@ -34,7 +34,9 @@ if (!$producto) {
     <div class="product-container">
     <div class="product-details">
         <div class="product-image">
-            <img src="../assets/images/<?= strtolower(str_replace(' ', '', $producto['nombre'])) ?>.jpeg" alt="<?= htmlspecialchars($producto['nombre']) ?>">
+            <?php if ($producto['foto_blob']): ?>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['foto_blob']); ?>" alt="Imagen del producto" class="product-thumbnail">
+            <?php endif; ?>
         </div>
         <div class="product-info">
             <h1><?= htmlspecialchars($producto['nombre']) ?></h1>
