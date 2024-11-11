@@ -1,12 +1,17 @@
 <?php
-include '../php/conexion.php';
+include 'conexion.php';
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $age = intval($_POST['age']);
     $password = $_POST['password'];
+    $telefono = '';
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $is_admin = 0;
 
     if (empty($name) || empty($email) || empty($password) || $age <= 0) {
         echo "
@@ -33,11 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $query = "INSERT INTO clientes (nombre, email, edad, contraseña) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO clientes (nombre, email, edad, telefono, contraseña, is_admin) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($query);
 
     try {
-        $stmt->execute([$name, $email, $age, $hashed_password]);
+        $stmt->execute([$name, $email, $age, $telefono, $hashed_password, $is_admin]);
 
         echo "
         <script>
@@ -48,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         echo "
         <script>
-        alert('Error al registrar el usuario. Inténtalo de nuevo más tarde.');
+        alert('Error al registrar el usuario. Inténtalo de nuevo más tarde. Detalles del error: " . $e->getMessage() . "');
         window.location.href='../pages/register.php';
         </script>
         ";

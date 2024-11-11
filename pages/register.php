@@ -12,8 +12,10 @@
 </head>
 <body>
     
-    <?php include '../php/conexion.php';
-    include '../includes/loginToggle.php'; ?>
+    <?php 
+    include '../php/conexion.php';
+    include '../includes/loginToggle.php'; 
+    ?>
     
     <div class="container-login">
         <div class="box form-box">
@@ -34,6 +36,12 @@
                     <label for="age">Edad</label>
                     <input type="number" name="age" id="age" autocomplete="off" required>
                 </div>
+
+                <div class="field input">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" name="telefono" id="telefono" autocomplete="off">
+                </div>
+
                 <div class="field input">
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" id="password" autocomplete="off" required>
