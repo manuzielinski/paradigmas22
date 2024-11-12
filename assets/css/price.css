@@ -6,20 +6,18 @@
     max-width: 250px;
     text-align: center;
 }
-/* Centrar la sección de noticias */
 .news-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem; /* Espacio entre cada noticia */
+    gap: 2rem;
     padding: 2rem 0;
 }
 
-/* Estilo de cada artículo de noticia */
 .news-item {
     width: 100%;
-    max-width: 300px; /* Ancho máximo para cada noticia */
-    text-align: center; /* Centrar el texto dentro de cada noticia */
+    max-width: 300px;
+    text-align: center;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;

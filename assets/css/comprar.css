@@ -1,4 +1,3 @@
-/* Contenedor principal del formulario */
 .Forms-container {
     width: 80%;
     margin: 0 auto;
@@ -8,7 +7,6 @@
     border-radius: 10px;
 }
 
-/* Título principal */
 h1 {
     text-align: center;
     font-size: 2rem;
@@ -16,7 +14,6 @@ h1 {
     color: #333;
 }
 
-/* Estilo general del formulario */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -27,12 +24,10 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Agrupación de los elementos del formulario */
 .form-group {
     margin-bottom: 20px;
 }
 
-/* Etiquetas dentro del formulario */
 .form-group label {
     display: block;
     margin-bottom: 8px;
@@ -40,7 +35,6 @@ form {
     color: #555;
 }
 
-/* Campos de entrada (texto, select) */
 .form-group input,
 .form-group select {
     width: 100%;
@@ -59,7 +53,6 @@ form {
     box-shadow: 0 0 8px rgba(10, 118, 235, 0.3);
 }
 
-/* Eliminar botones de spin en campos numéricos (teléfono) */
 .form-group input[type="tel"]::-webkit-inner-spin-button,
 .form-group input[type="tel"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -91,7 +84,6 @@ form {
     transform: translateY(0);
 }
 
-/* Estilos adicionales para los campos del formulario en dispositivos pequeños */
 @media (max-width: 768px) {
     .Forms-container {
         width: 95%;

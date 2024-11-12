@@ -1,7 +1,12 @@
 <?php
 include '../php/conexion.php';
-// id de la noticia a mostrar
-$noticia_id = 1;
+
+$noticia_id = isset($_GET['id']) ? intval($_GET['id']) : null;
+
+if (!$noticia_id) {
+    echo "No se especificó una noticia válida.";
+    exit;
+}
 
 $query = "SELECT titulo, fecha, contenido, imagen_blob FROM noticias WHERE id = :id";
 $stmt = $pdo->prepare($query);
@@ -20,6 +25,7 @@ if ($noticia) {
     exit;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">

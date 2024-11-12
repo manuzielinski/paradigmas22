@@ -26,13 +26,11 @@ buyButton.addEventListener('click', function (event) {
         purchaseStatus.textContent = 'La cantidad debe ser mayor que cero.';
         purchaseStatus.style.color = 'red';
     } else {
-        // Actualizar el campo oculto del sabor antes de enviar el formulario
         document.getElementById('selectedFlavorInput').value = flavorSeleccionado; 
 
         purchaseStatus.textContent = `Redireccionando...`;
         purchaseStatus.style.color = 'green';
 
-        // Enviar el formulario
         purchaseForm.submit();
     }
 });
