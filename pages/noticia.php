@@ -1,23 +1,23 @@
 <?php
 include '../php/conexion.php';
 
-$query = "SELECT titulo, fecha, contenido, imagen_blob FROM noticias ORDER BY RAND() LIMIT 1";
+// Consulta para obtener una noticia donde el ID sea mayor a 3
+$query = "SELECT id, titulo, fecha, contenido, imagen_blob FROM noticias WHERE id > 3 ORDER BY fecha DESC LIMIT 1";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 
 $noticia = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($noticia) {
-    $titulo = $noticia['titulo'];
-    $fecha = $noticia['fecha'];
-    $contenido = $noticia['contenido'];
-    $imagen_blob = $noticia['imagen_blob'];
-} else {
-    echo "No hay noticias disponibles.";
+if (!$noticia) {
+    echo "No hay noticias disponibles con ID mayor a 3.";
     exit;
 }
-?>
 
+$titulo = $noticia['titulo'];
+$fecha = $noticia['fecha'];
+$contenido = $noticia['contenido'];
+$imagen_blob = $noticia['imagen_blob'];
+?>
 
 <!DOCTYPE html>
 <html lang="es">
