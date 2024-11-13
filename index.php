@@ -91,7 +91,7 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
                 </p>
             </div>
         </div>
-        <h2 class="section-title">Aprende más sobre la nicotina</h2>
+        <h2 class="section-title">Aprende más sobre la Nicotina</h2>
         <div class="news-container">
     <?php foreach ($noticias as $noticia): ?>
         <div class="news-item">
