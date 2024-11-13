@@ -1,16 +1,8 @@
 <?php
 include '../php/conexion.php';
 
-$noticia_id = isset($_GET['id']) ? intval($_GET['id']) : null;
-
-if (!$noticia_id) {
-    echo "No se especificó una noticia válida.";
-    exit;
-}
-
-$query = "SELECT titulo, fecha, contenido, imagen_blob FROM noticias WHERE id = :id";
+$query = "SELECT titulo, fecha, contenido, imagen_blob FROM noticias ORDER BY RAND() LIMIT 1";
 $stmt = $pdo->prepare($query);
-$stmt->bindParam(':id', $noticia_id, PDO::PARAM_INT);
 $stmt->execute();
 
 $noticia = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +13,7 @@ if ($noticia) {
     $contenido = $noticia['contenido'];
     $imagen_blob = $noticia['imagen_blob'];
 } else {
-    echo "Noticia no encontrada.";
+    echo "No hay noticias disponibles.";
     exit;
 }
 ?>
